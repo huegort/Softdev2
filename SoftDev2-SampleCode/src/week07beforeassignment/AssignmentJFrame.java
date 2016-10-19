@@ -43,7 +43,6 @@ public class AssignmentJFrame extends JFrame {
 		this.getContentPane().add(buttonPanel);
 		
 		
-		
 		buttonPanel.add(b1);
 		buttonPanel.add(b2);
 		buttonPanel.add(b3);
