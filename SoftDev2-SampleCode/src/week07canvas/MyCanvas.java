@@ -4,7 +4,9 @@ import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class MyCanvas extends Canvas{
+import javax.swing.JPanel;
+
+public class MyCanvas extends JPanel{
 	public MyCanvas(){
 		super();
 		initUI();

@@ -6,7 +6,7 @@ import java.awt.Canvas;
 import javax.swing.*;
 
 public class CanvasJFrame extends JFrame{
-	Canvas canvas = new MyCanvas();
+	JPanel canvas = new MyCanvas();
 	public CanvasJFrame(){
 		super();
 		initUI();
