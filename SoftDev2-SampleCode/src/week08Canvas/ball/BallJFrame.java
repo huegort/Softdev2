@@ -5,6 +5,7 @@ import javax.swing.JFrame;
 import week08Canvas.DisplayBasic;
 
 public class BallJFrame extends JFrame {
+	BallDisplay ballDisplay;
 	public BallJFrame(){
 		super();
 		initUI();
@@ -21,7 +22,7 @@ public class BallJFrame extends JFrame {
 	}
 
 	private void placeComponents() {
-		BallDisplay ballDisplay = new BallDisplay();
+		ballDisplay = new BallDisplay();
 		this.getContentPane().add(ballDisplay);
 		
 	}
@@ -29,5 +30,9 @@ public class BallJFrame extends JFrame {
 	private void bindListeners() {
 		// TODO Auto-generated method stub
 		
+	}
+	public void start(){
+		Thread th = new Thread(ballDisplay);
+		th.start();;	
 	}
 }

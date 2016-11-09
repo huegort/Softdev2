@@ -16,7 +16,7 @@ public class Ball {
 	}
 	public void draw(Graphics2D g2){
 		g2.fillOval((int)x, (int)y, 50, 50);
-		tick();
+	
 	}
 	public void tick(){
 		x+=vx;

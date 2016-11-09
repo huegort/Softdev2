@@ -5,6 +5,10 @@ public class BallMain {
 
 		BallJFrame win = new BallJFrame();
 		win.setVisible(true);
+		System.out.println("before start");
+		win.start();
+		
+		System.out.println("at the end");
 	
 	}
 	

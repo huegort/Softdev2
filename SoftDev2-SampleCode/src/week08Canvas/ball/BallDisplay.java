@@ -10,7 +10,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
-public class BallDisplay extends JPanel {
+public class BallDisplay extends JPanel implements Runnable{
 
 	Ball ball;
 	int imageNumber =0;
@@ -27,6 +27,7 @@ public class BallDisplay extends JPanel {
 	@Override
 	public void paint(Graphics g){
 		Graphics2D g2 = (Graphics2D)g;
+		g2.clearRect(0, 0, this.getWidth(),	 this.getHeight());
 		ball.draw((Graphics2D) g);
 		
 		try {
@@ -46,6 +47,23 @@ public class BallDisplay extends JPanel {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 	}
 
+	
+	public void tickAll(){
+		ball.tick();
+		repaint();
+	}
+	public void run(){
+		while (true){
+			this.tickAll();
+			try {
+				Thread.sleep(1000/60);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
 }
