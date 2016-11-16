@@ -5,6 +5,7 @@ import java.awt.Graphics;
 import java.util.Random;
 
 public class Ball implements Actor {
+	static Color colors[] = {Color.BLACK, Color.CYAN, Color.red, Color.GREEN, Color.yellow, Color.BLUE, Color.MAGENTA, Color.LIGHT_GRAY, Color.PINK};
 	
 	float x,y,vx,vy;
 	int size;
@@ -18,10 +19,10 @@ public class Ball implements Actor {
 		size = (generator.nextInt(3)+1) *20;
 		x = cx-((float)size/2);
 		y = cy -((float)size/2);
-		System.out.println("new Ball "+x +","+y+":"+cx+","+cy+"::"+size);
+		//System.out.println("new Ball "+x +","+y+":"+cx+","+cy+"::"+size);
 		vx = generator.nextFloat()*3 - 1.5f;
 		vy = generator.nextFloat()*3 - 1.5f;
-		color = Color.RED;
+		color = colors[generator.nextInt(colors.length)];
 	}
 
 	@Override
@@ -38,18 +39,18 @@ public class Ball implements Actor {
 		
 		// bounds checking
 		if (x < 0){
-			vx = -vx;
+			vx = Math.abs(vx);
 		}
 		
 		if (y < 0){
-			vy = -vy;
+			vy = Math.abs(vy);
 		}
 		if (x > gameBoard.getWidth()- size){
-			vx = -vx;
+			vx = -Math.abs(vx);
 		}
 		
 		if (y > gameBoard.getHeight()- size){
-			vy = -vy;
+			vy = -Math.abs(vy);
 		}
 	}
 
