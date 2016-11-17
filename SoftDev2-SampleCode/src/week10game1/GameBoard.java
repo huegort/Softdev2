@@ -1,6 +1,7 @@
 package week10game1;
 
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,9 +15,10 @@ public class GameBoard extends JPanel {
 		createBall(200,200);
 	}
 	public void paint(Graphics g){
+		Graphics2D g2 = (Graphics2D)g;
 		g.clearRect(0, 0, this.getWidth(), this.getHeight());
 		for (Actor actor: actors){
-			actor.draw(g);
+			actor.draw(g2);
 		}
 		
 	}

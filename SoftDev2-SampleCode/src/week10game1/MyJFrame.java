@@ -37,7 +37,10 @@ public class MyJFrame extends JFrame {
 
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				gameBoard.createBall(arg0.getX(), arg0.getY());
+				
+				// ok this is a bit of a hack
+				//I am subtracting 34 from the y of the JFrame to translate it to the panel 
+				gameBoard.createBall(arg0.getX()-8, arg0.getY()-32);
 				
 			}
 
