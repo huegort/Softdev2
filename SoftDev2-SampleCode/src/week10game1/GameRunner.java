@@ -5,6 +5,7 @@ public class GameRunner implements Runnable {
 	GameBoard gameBoard;
 	boolean gameOn = true;
 	
+	
 	public GameRunner(GameBoard gameBoard){
 		this.gameBoard = gameBoard;
 	}
@@ -14,7 +15,7 @@ public class GameRunner implements Runnable {
 		while (gameOn){
 			gameBoard.tickAll();
 			try {
-				Thread.sleep(1000/60);
+				Thread.sleep(GameBoard.REFRESHRATE);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
