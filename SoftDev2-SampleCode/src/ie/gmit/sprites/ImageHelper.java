@@ -20,9 +20,9 @@ public class ImageHelper {
 		int width = image.getWidth(null)/numberOfColumns;
 		int height = image.getHeight(null)/numberOfRows;
 		int count = 0;
-		for (int y= 0; y< numberOfRows;y++){
-			for(int x = 0; x<numberOfColumns ;x++){
-				images[count] = image.getSubimage((x*width),(y*height), width, height);
+		for (int row= 0; row< numberOfRows;row++){
+			for(int col = 0; col<numberOfColumns ;col++){
+				images[count] = image.getSubimage((col*width),(row*height), width, height);
 				count++;
 			}
 		}

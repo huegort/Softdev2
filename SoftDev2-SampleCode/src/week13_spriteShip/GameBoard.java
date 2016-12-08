@@ -37,5 +37,16 @@ public class GameBoard extends JPanel {
 		Thread th = new Thread(new GameRunner(this));
 		th.start();
 	}
+	public void onKey(int keyCode, boolean down){
+		if (keyCode == LEFT){
+			ship.turnLeft(down);
+		}
+		if (keyCode == RIGHT){
+			ship.turnRight(down);
+		}
+		if (keyCode == ACCELERATE){
+			ship.accelerate(down);
+		}
+	}
 
 }

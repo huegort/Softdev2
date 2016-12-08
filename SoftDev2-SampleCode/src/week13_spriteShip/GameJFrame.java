@@ -56,7 +56,7 @@ public class GameJFrame extends JFrame {
 	}
 
 	public void onKey(KeyEvent evt, boolean down){
-		System.out.println("key hit "+evt.getKeyChar()+":"+evt.getKeyCode()+" down="+down);
+		gameBoard.onKey(evt.getKeyCode(), down);
 	}
 	
 
