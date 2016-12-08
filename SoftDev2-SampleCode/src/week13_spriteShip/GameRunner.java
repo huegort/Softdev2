@@ -11,7 +11,7 @@ public class GameRunner implements Runnable {
 		while(gameOn){
 			gameBoard.tickAll();
 			try {
-				Thread.sleep(500);
+				Thread.sleep(GameBoard.REFRASHINTERVAL);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

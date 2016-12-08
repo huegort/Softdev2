@@ -1,5 +1,6 @@
 package week13_spriteShip;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 
@@ -9,6 +10,7 @@ public class GameBoard extends JPanel {
 	public int LEFT=37;
 	public int RIGHT=39;
 	public int ACCELERATE=32;
+	public static int REFRASHINTERVAL = 100;
 	
 	Ship ship;
 	
@@ -20,7 +22,10 @@ public class GameBoard extends JPanel {
 	public void paint(Graphics g){
 		
 		Graphics2D g2 =(Graphics2D)g;
-		g2.clearRect(0, 0, this.getWidth(), this.getHeight());
+		// background (you could put an image in as the background
+		//g2.clearRect(0, 0, this.getWidth(), this.getHeight());
+		g2.setColor(new Color(180,150,130));
+		g2.fillRect(0, 0, this.getWidth(), this.getHeight());
 		ship.draw(g2);
 				
 	}

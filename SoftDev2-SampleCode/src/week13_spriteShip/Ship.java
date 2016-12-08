@@ -8,6 +8,8 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import ie.gmit.sprites.ImageHelper;
+
 public class Ship implements Actor {
 	GameBoard gameBoard;
 	double x, y;
@@ -26,27 +28,16 @@ public class Ship implements Actor {
 	
 	static Image images[] = getImages();
 	static Image[] getImages(){
-		Image images[] = new Image[16];
-		int marginTop = 0;
-		int marginLeft = 0;
-		int width = 218;
-		int height = 218;
-		// code to load the images
 		try {
 			BufferedImage testImage = ImageIO.read(new File("cars.png"));
-			int count = 0;
-			for (int y= 0; y< 4;y++){
-				for(int x = 0; x<4 ;x++){
-					images[count] = testImage.getSubimage(marginLeft+(x*width), marginTop+(y*height), width, height);
-					count++;
-				}
-			}
+			return ImageHelper.getSubImages(testImage, 4, 4);
+			
+			//BufferedImage testImage = ImageIO.read(new File("sprites/bird.png"));
+			//return ImageHelper.getSubImages(testImage, 5, 3);
+			
 		} catch (IOException e) {
 			throw new RuntimeException("could not laod image",e);
 		}
-		
-		
-		return images;
 	}
 	
 	public Ship(GameBoard gameBoard){
@@ -75,8 +66,8 @@ public class Ship implements Actor {
 	@Override
 	public void tick() {
 		imageNumber++;
-		System.out.println(imageNumber);
-		imageNumber %=16;
+		//System.out.println(imageNumber);
+		imageNumber %=images.length;
 
 	}
 
